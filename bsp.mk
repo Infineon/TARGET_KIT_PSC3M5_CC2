@@ -36,6 +36,9 @@ BSP_DEFINES:=
 # SECURE or NON_SECURE. Leave VCORE_ATTRS blank if trustzone is not used
 VCORE_ATTRS?=SECURE
 
+# Enable Hardware FPU if not defined in application Makefile
+VFP_SELECT?=hardfp
+
 ifneq (,$(filter $(VCORE_ATTRS),SECURE))
     MTB_BSP__LINKER_SCRIPT=$(MTB_TOOLS__TARGET_DIR)/TOOLCHAIN_$(TOOLCHAIN)/linker_s_flash.$(MTB_RECIPE__SUFFIX_LS)
     BSP_COMPONENTS+=SECURE_DEVICE

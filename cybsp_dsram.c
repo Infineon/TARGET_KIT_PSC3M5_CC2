@@ -87,6 +87,7 @@ cy_stc_syspm_warmboot_entrypoint_t syspmBspDeepSleepEntryPoint =
 //--------------------------------------------------------------------------------------------------
 // cybsp_syspm_dsram_init
 //--------------------------------------------------------------------------------------------------
+#if !defined(CYBSP_SKIP_PM_REGISTRATION)
 __WEAK cy_rslt_t cybsp_syspm_dsram_init(void)
 {
     /* Setup DS-RAM Warmboot Re-entry */
@@ -95,6 +96,8 @@ __WEAK cy_rslt_t cybsp_syspm_dsram_init(void)
     return CY_RSLT_SUCCESS;
 }
 
+
+#endif //#if !defined(CYBSP_SKIP_PM_REGISTRATION)
 
 #if defined(__cplusplus)
 }

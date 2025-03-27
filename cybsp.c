@@ -26,15 +26,17 @@
 *******************************************************************************/
 
 #include <stdlib.h>
+
+#if !defined(CYBSP_SKIP_PM_REGISTRATION)
 #include "cybsp_pm.h"
+#endif
+
 #include "cy_syspm.h"
 #include "cy_sysclk.h"
 #include "cybsp.h"
 #if defined(CY_USING_HAL)
 #include "cyhal_hwmgr.h"
 #include "cyhal_syspm.h"
-#endif
-#if defined(CY_USING_HAL) || defined(CY_USING_HAL_LITE)
 #include "cyhal_system.h"
 #endif
 #include "cybsp_dsram.h"
@@ -75,8 +77,6 @@ cy_rslt_t cybsp_init(void)
         // macros that exist in classic HAL configuration only (HAL-Lite configuration does
         // not include SysPm HAL)
         cyhal_syspm_set_supply_voltage(CYHAL_VOLTAGE_SUPPLY_VDDA, CY_CFG_PWR_VDDA_MV);
-        #elif defined(CY_USING_HAL_LITE)
-        cyhal_system_set_supply_voltage(CYHAL_VOLTAGE_SUPPLY_VDDA, CY_CFG_PWR_VDDA_MV);
         #endif
     }
     #endif // ifdef CY_CFG_PWR_VDDA_MV
@@ -91,6 +91,7 @@ cy_rslt_t cybsp_init(void)
         #endif
     }
 
+    #if !defined(CYBSP_SKIP_PM_REGISTRATION)
     if (CY_RSLT_SUCCESS == result)
     {
         result = cybsp_syspm_dsram_init();
@@ -100,6 +101,7 @@ cy_rslt_t cybsp_init(void)
     {
         result = cybsp_pm_callbacks_register();
     }
+    #endif //#if !defined(CYBSP_SKIP_PM_REGISTRATION)
 
     // CYHAL_HWMGR_RSLT_ERR_INUSE result could be returned if any resourced needed for the BSP was
     // previously reserved by the user. Review the Device Configurator (design.modus) and the BSP

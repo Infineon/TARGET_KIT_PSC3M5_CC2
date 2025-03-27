@@ -70,9 +70,9 @@ if (!isdefinedsymbol(_size_S_FLASH)) {
 }
 define symbol __size_ns_flash__     = __size_flash__ - __size_s_flash__;
 
-define symbol __ICFEDIT_region_IROM0_start__  = 0x22000000; /* flash sbus */
+define symbol __ICFEDIT_region_IROM0_start__  = 0x22000000 + __size_s_flash__; /* flash sbus */
 define symbol __ICFEDIT_region_IROM1_start__  = 0x02000000 + __size_s_flash__; /* cbus */
-define symbol __ICFEDIT_region_IROM1_size__   = 0x00030000; /* __size_ns_flash__ */
+define symbol __ICFEDIT_region_IROM1_size__   = __size_ns_flash__; /* __size_ns_flash__ */
 
 /*-Sizes-*/
 if (!isdefinedsymbol(__STACK_SIZE)) {
