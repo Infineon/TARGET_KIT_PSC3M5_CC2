@@ -1,6 +1,6 @@
 {
     "core": {
-        "version": "2.0.1.45585"
+        "version": "3.0.1.48605"
     },
     "opt": {
         "props": {
@@ -20,6 +20,7 @@
                 "low_power",
                 "lptimer",
                 "mcu_gp",
+                "psc3m5",
                 "rtc",
                 "smart_io",
                 "spi",
@@ -39,7 +40,7 @@
             "min_tools": "3.3.0",
             "template": {
                 "id": "mtb-template-cat1",
-                "version": "release-v1.7.0"
+                "version": "release-v1.7.6"
             }
         }
     }

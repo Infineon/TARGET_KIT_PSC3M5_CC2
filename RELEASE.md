@@ -17,6 +17,16 @@ The KIT_PSC3M5_CC2 library includes the following:
 * API documentation
 
 ### What Changed?
+#### v3.0.1
+* Update BSP template to v1.7.6 
+#### v3.0.0
+* B1 MPN update from CYW20829B0LKML to CYW20829B1010 and CYW89829B0232 to CYW89829B1232 
+#### v2.0.2
+* DSRAM and secure silicon fix release
+#### v2.0.1
+* Revert support from MTB3.2 to MTB3.0 and above
+#### v2.0.0
+* BTFW as separate bsp dependent asset and MTB3.2 support
 #### v1.0.4
 * MPN CYW89829B01MKSBG to CYW89829B0232 update release for CYW89829
 #### v1.0.3
@@ -33,8 +43,8 @@ This version of the KIT_PSC3M5_CC2 BSP was validated for compatibility with the 
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox™ Software Environment        | 3.1.0   |
-| GCC Compiler                              | 11.3.1  |
+| ModusToolbox™ Software Environment        | 3.5.0   |
+| GCC Compiler                              | 14.2.1  |
 | IAR Compiler                              | 9.40.2  |
 | ARM Compiler                              | 6.16    |
 
@@ -50,4 +60,4 @@ Minimum required ModusToolbox™ Software Environment: v3.0.0
 [api]: https://infineon.github.io/TARGET_KIT_PSC3M5_CC2/html/modules.html
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2022.
+© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2025.
